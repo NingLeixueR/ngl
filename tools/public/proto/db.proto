@@ -5,6 +5,20 @@ package pbdb;
 
 option optimize_for = SPEED;
 
+enum ENUM_DB
+{
+	ENUM_DB_ACCOUNT = 0;		// 账号数据
+	ENUM_DB_ROLE = 1;			// 玩家数据
+	ENUM_DB_BRIEF = 2;			// 玩家简要数据
+	ENUM_DB_BAG = 3;			// 背包数据
+	ENUM_DB_KEYVALUE = 4;		// 键值数据
+	ENUM_DB_MAIL = 5;			// 邮件数据
+	ENUM_DB_GUILD = 6;			// 工会数据
+	ENUM_DB_NOTICE = 7;			// 公告数据
+	ENUM_DB_RANKLIST = 8;		// 排行数据
+	ENUM_DB_ACTIVITY = 9;		// 活动数据
+	ENUM_DB_COUNT = 10;
+};
 
 // ENUM_DB_ACCOUNT,				// 账号数据
 message db_account
