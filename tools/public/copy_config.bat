@@ -1,0 +1,1 @@
+xcopy copyfile\* ..\..\bin\Debug\ /s/y
