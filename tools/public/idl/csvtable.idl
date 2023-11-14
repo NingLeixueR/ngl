@@ -366,35 +366,23 @@ struct tab_activity_drawcompliance
 	int32_t m_mailid;				// 邮件id
 };
 
-enum EReceiveTask
+enum ETask
 {
-	EReceiveTaskRoleLv  = 1,		// 玩家等级
-	EReceiveTaskRoleVip = 2,		// 玩家vip等级
-	EReceiveTaskTaskId  = 3,		// 完成某ID任务
+	ETaskRoleLv  = 1,		// 玩家等级
+	ETaskRoleVip = 2,		// 玩家vip等级
+	ETaskTaskId  = 3,		// 完成某ID任务
 };
 
 struct task_receive
 {
-	EReceiveTask m_receivetype;		// EReceiveTask(1.玩家等级达到X 2.主公vip等级达到x 3.完成某ID任务)
-	int32_t m_parmint1;
-	int32_t m_parmint2;
-	string m_parmstring1;
-	string m_parmstring2;
+	ETask m_receivetype;			// ETask(1.玩家等级达到X 2.主公vip等级达到x 3.完成某ID任务)
+	vector<int32_t> m_parmint;
 };
 
-enum EFinshTask
+struct task_complete
 {
-	EFinshTaskRoleLv = 1,		// 玩家等级
-	EFinshTaskRoleVip = 2,	// 玩家vip等级
-};
-
-struct task_finsh
-{
-	EFinshTask m_finshtype;		// EFinshTask(1.玩家等级达到X 2.主公vip等级达到x)
-	int32_t m_parmint1;
-	int32_t m_parmint2;
-	string m_parmstring1;
-	string m_parmstring2;
+	ETask m_completetype;		// ETask(1.玩家等级达到X 2.主公vip等级达到x 3.完成某ID任务)
+	vector<int32_t> m_parmint;
 };
 
 struct tab_task
@@ -404,7 +392,7 @@ struct tab_task
 	string m_remarks;
 
 	vector<task_receive> m_taskreceive;		// 接收此任务的前提
-	vector<task_finsh> m_taskfinsh;			// 完成此任务的条件
+	vector<task_complete> m_taskcomplete;	// 完成此任务的条件
 	int32_t m_dropid;						// 任务奖励
 };
 

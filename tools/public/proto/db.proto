@@ -17,7 +17,8 @@ enum ENUM_DB
 	ENUM_DB_NOTICE = 7;			// 公告数据
 	ENUM_DB_RANKLIST = 8;		// 排行数据
 	ENUM_DB_ACTIVITY = 9;		// 活动数据
-	ENUM_DB_COUNT = 10;
+	ENUM_DB_TASK = 10;			// 任务数据
+	ENUM_DB_COUNT = 11;
 };
 
 // ENUM_DB_ACCOUNT,				// 账号数据
@@ -156,18 +157,22 @@ message db_activity
 
 message db_task
 {
-	optional int64 m_id			= 1; // roleid
+	optional int64 m_id				= 1; // roleid
+	message data_schedule
+	{
+		optional int32 m_type			= 1;	//EFinshTask
+		repeated int32 m_parmint		= 2; 
+		repeated int32 m_sumint			= 3; 
+	}
 	message data
 	{
-		optional int32 m_taskid		= 1; // 任务id
-		optional int32 m_receiveutc	= 2; // 接收任务时间
-		optional int32 m_finshutc	= 3; // 完成任务时间
-		optional int32 m_parmint1	= 4; 
-		optional int32 m_parmint2	= 5;
-		optional string m_parmstring1	= 6; 
-		optional string m_parmstring2	= 7;
+		optional int32 m_taskid				= 1; // 任务id
+		optional int32 m_receiveutc			= 2; // 接收任务时间
+		optional int32 m_finshutc			= 3; // 完成任务时间
+		repeated data_schedule m_schedules  = 4; // 任务进度
 	}
-	repeated data m_datas = 2; // 任务数据
+	map<int32,data> m_rundatas			= 2; // 正在进行的任务数据
+	map<int32,data> m_completeddatas	= 3; // 已完成的任务数据
 }
 
 
