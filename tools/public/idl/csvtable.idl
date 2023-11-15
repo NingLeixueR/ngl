@@ -385,12 +385,20 @@ struct task_complete
 	vector<int32_t> m_parmint;
 };
 
+enum ETaskType
+{
+	ETaskTypePrincipalLine,			// 主线任务
+	ETaskTypeBranchLine,			// 支线任务
+	ETaskTypeDaily,					// 每日任务
+};
+
 struct tab_task
 {
 	int32_t m_id;				// 任务id
 	string m_name;
 	string m_remarks;
 
+	ETaskType m_type;
 	vector<task_receive> m_taskreceive;		// 接收此任务的前提
 	vector<task_complete> m_taskcomplete;	// 完成此任务的条件
 	int32_t m_dropid;						// 任务奖励
