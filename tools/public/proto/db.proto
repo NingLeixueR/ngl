@@ -3,7 +3,7 @@ syntax = "proto3";
 
 package pbdb;
 
-option optimize_for = SPEED;
+//option optimize_for = SPEED;
 
 enum ENUM_DB
 {
