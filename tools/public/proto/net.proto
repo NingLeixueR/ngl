@@ -235,3 +235,59 @@ message PROBUFF_NET_MAIL_DEL_RESPONSE
 	optional int64 m_mailid				= 1;
 	optional bool m_stat				= 2;
 };
+
+//// #### aoi地图相关
+
+enum eunit
+{
+	eunit_role		= 0;		// 玩家单位
+	eunit_monster	= 1;		// 怪物单位
+	eunit_region	= 2;		// 区域单位
+};
+
+message VECTOR2
+{
+	optional int32 m_x = 1;
+	optional int32 m_y = 2;
+};
+
+message VECTOR3
+{
+	optional int32 m_x = 1;
+	optional int32 m_y = 2;
+	optional int32 m_z = 3;
+};
+
+message UNIT_POSITION
+{
+	optional int64 m_id			= 2;
+	optional VECTOR2 m_position = 3;
+	optional int32 m_angle		= 4;			// 方向角度[0-360]
+};
+
+message UNIT
+{
+	optional eunit m_type = 1;
+	optional int64 m_id = 2;
+	optional UNIT_POSITION m_position = 3;
+};
+
+// 同步玩家信息
+message PROBUFF_NET_SYNC_UNIT
+{
+	repeated UNIT m_units				= 1;
+};
+
+// 进入视野
+message PROBUFF_NET_ENTER_LEAVE_VIEW
+{
+	optional bool m_isenter				= 1;
+	repeated int64 m_units				= 2;
+};
+
+// 同步位置方向信息
+message PROBUFF_NET_SYNC_POSITION
+{
+	map<int64,UNIT_POSITION> m_position = 1;
+	//repeated UNIT_POSITION m_position = 1;
+};
