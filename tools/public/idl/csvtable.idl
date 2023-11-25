@@ -421,7 +421,6 @@ struct tab_map
 	string m_name;
 	string m_remarks;
 
-
 	int32_t m_w;					// x轴宽度
 	int32_t m_l;					// y轴长度
 	int32_t m_nx;					// [视野]x轴格子数量
@@ -432,4 +431,29 @@ struct tab_map
 	vector<obstacles_data> m_obstacles;	// 地图数据
 };
 
+struct tab_matching
+{
+	int32_t m_id;			// 玩法类型 pbnet::eplays
+	string m_name;
+	string m_remarks;
+
+	int32_t m_count;			// 玩法达到此人数可以开启玩法
+	int32_t m_time;				// 匹配最长时间
+	bool m_iswaitconfirm;		// 是否需要等待确认
+	int32_t m_waitconfirmtime;	// 等待确认的时间
+};
+
+// 玩法
+struct tab_playes
+{
+	int32_t m_id;			// 玩法
+	string m_name;
+	string m_remarks;
+
+	int32_t m_type;				// 玩法类型 pbnet::eplays
+	int32_t m_mapid;			// 在哪个地图应用该玩法
+	int32_t m_preparation_tm;	// 准备阶段时间
+	int32_t m_play_tm;			// 玩法时间
+	int32_t m_settlement_tm;	// 结算时间
+};
 
