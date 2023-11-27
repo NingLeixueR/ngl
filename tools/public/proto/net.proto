@@ -423,6 +423,13 @@ message PROBUFF_NET_MATCHING_SUCCESS
 	optional int32 m_dataid				= 4;	// 匹配成功后生成的actor的data id
 };
 
+// 确认进入玩法
+message PROBUFF_NET_ENTER_PLAYS
+{
+	optional eplays m_type				= 1;
+	optional int64 m_roomid				= 2;	// 房间id
+};
+
 //// ################### [匹配玩法 Finish] ################# ////
 //// ####################################################### ////
 /////////////////////////////////////////////////////////////////

@@ -443,6 +443,12 @@ struct tab_matching
 	int32_t m_waitconfirmtime;	// 等待确认的时间
 };
 
+struct Vector2
+{
+	int32_t m_x;
+	int32_t m_y;
+};
+
 // 玩法
 struct tab_plays
 {
@@ -450,10 +456,11 @@ struct tab_plays
 	string m_name;
 	string m_remarks;
 
-	int32_t m_type;				// 玩法类型 pbnet::eplays
-	int32_t m_mapid;			// 在哪个地图应用该玩法
-	int32_t m_preparation_tm;	// 准备阶段时间
-	int32_t m_play_tm;			// 玩法时间
-	int32_t m_settlement_tm;	// 结算时间
+	int32_t m_type;					// 玩法类型 pbnet::eplays
+	int32_t m_mapid;				// 在哪个地图应用该玩法
+	int32_t m_preparation_tm;		// 准备阶段时间
+	int32_t m_play_tm;				// 玩法时间
+	int32_t m_settlement_tm;		// 结算时间
+	vector<Vector2> m_birthpoint;	// 出生点Vector2(m_x:int32_t,m_y:int32_t)	
 };
 
