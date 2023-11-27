@@ -444,7 +444,7 @@ struct tab_matching
 };
 
 // Íæ·¨
-struct tab_playes
+struct tab_plays
 {
 	int32_t m_id;			// Íæ·¨
 	string m_name;
