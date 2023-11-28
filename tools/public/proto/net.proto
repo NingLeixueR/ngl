@@ -372,7 +372,7 @@ message PROBUFF_NET_MEMBER_MATCHING_CANCEL
 message PROBUFF_NET_MATCHING_WAITCONFIRM
 {
 	optional eplays m_type				= 1;
-	optional int64 m_roomid				= 2;	// 房间id
+	optional int32 m_roomid				= 2;	// 房间id
 };
 
 
@@ -380,7 +380,7 @@ message PROBUFF_NET_MATCHING_WAITCONFIRM
 message PROBUFF_NET_MATCHING_CONFIRM
 {
 	optional eplays m_type				= 1;
-	optional int64 m_roomid				= 2;	// 房间id
+	optional int32 m_roomid				= 2;	// 房间id
 };
 
 enum ematching_confirm_stat
@@ -394,7 +394,7 @@ enum ematching_confirm_stat
 message PROBUFF_NET_MATCHING_CONFIRM_RESPONSE
 {
 	optional eplays m_type				= 1;
-	optional int64 m_roomid				= 2;	// 房间id
+	optional int32 m_roomid				= 2;	// 房间id
 	optional ematching_confirm_stat m_stat = 3;	// 确认状态
 };
 
@@ -402,7 +402,7 @@ message PROBUFF_NET_MATCHING_CONFIRM_RESPONSE
 message PROBUFF_NET_SYNC_MATCHING_CONFIRM
 {
 	optional eplays m_type				= 1;
-	optional int64 m_roomid				= 2;	// 房间id
+	optional int32 m_roomid				= 2;	// 房间id
 	repeated int64 m_roleid				= 3;
 };
 
@@ -410,7 +410,7 @@ message PROBUFF_NET_SYNC_MATCHING_CONFIRM
 message PROBUFF_NET_MATCHING_SYNC
 {
 	optional eplays m_type				= 1;
-	optional int64 m_roomid				= 2;	// 房间id
+	optional int32 m_roomid				= 2;	// 房间id
 	repeated MATCHING_MEMBER m_member	= 3;
 };
 
@@ -418,13 +418,14 @@ message PROBUFF_NET_MATCHING_SYNC
 message PROBUFF_NET_MATCHING_SUCCESS_RESPONSE
 {
 	optional eplays m_type				= 1;
-	optional int64 m_roomid				= 2;	// 房间id
+	optional int32 m_roomid				= 2;	// 房间id
+	optional int64 m_playsactorid		= 3;	// 玩法id
 };
 
 message PROBUFF_NET_MATCHING_SUCCESS
 {
 	optional eplays m_type				= 1;
-	optional int64 m_roomid				= 2;	// 房间id
+	optional int32 m_roomid				= 2;	// 房间id
 	repeated MATCHING_MEMBER m_member	= 3;
 	optional int32 m_dataid				= 4;	// 匹配成功后生成的actor的data id
 };
@@ -433,7 +434,7 @@ message PROBUFF_NET_MATCHING_SUCCESS
 message PROBUFF_NET_ENTER_PLAYS
 {
 	optional eplays m_type				= 1;
-	optional int64 m_roomid				= 2;	// 房间id
+	optional int32 m_roomid				= 2;	// 房间id
 };
 
 //// ################### [匹配玩法 Finish] ################# ////
