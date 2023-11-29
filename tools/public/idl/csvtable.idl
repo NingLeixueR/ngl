@@ -89,8 +89,6 @@ struct tab_dbload
 	int m_sendmaxcount;			// 单次最多发送数量
 };
 
-
-
 struct tab_errormessage
 {
 	int32_t m_id;
@@ -463,4 +461,5 @@ struct tab_plays
 	int32_t m_settlement_tm;		// 结算时间
 	vector<Vector2> m_birthpoint;	// 出生点Vector2(m_x:int32_t,m_y:int32_t)	
 };
+
 
