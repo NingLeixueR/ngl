@@ -462,4 +462,3 @@ struct tab_plays
 	vector<Vector2> m_birthpoint;	// ³öÉúµãVector2(m_x:int32_t,m_y:int32_t)	
 };
 
-

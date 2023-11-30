@@ -274,6 +274,14 @@ message UnitAttribute
 	 optional int32 m_value				= 2;	// 属性值
 };
 
+enum eunitstat
+{
+	eunitstat_normal			= 0;			// (0)正常状态
+	eunitstat_nomove			= 1;			// (1 << 0)无法移动
+	eunitstat_nonormalattack	= 2;			// (1 << 1)无法进行普通攻击
+	eunitstat_noreleaseskill	= 4;			// (1 << 2)无法释放技能
+};
+
 message UnitModule
 {
 	optional int32 m_mtype				= 1;		// EnumModule
@@ -286,6 +294,7 @@ message UNIT
 	optional int64 m_id					= 2;
 	optional UNIT_POSITION m_position	= 3;
 	repeated UnitModule m_modules		= 4;
+	optional eunitstat m_stat			= 5;
 };
 
 // 同步属性值
