@@ -14,6 +14,35 @@ message PROBUFF_NET_HEARTBEAT
 {
 };
 
+// [请求]充值
+message PROBUFF_NET_RECHARGE
+{
+	optional int32 m_rechargeid			= 1;
+};
+
+// [回复]充值
+message PROBUFF_NET_RECHARGE_RESPONSE
+{
+	optional int32 m_rechargeid			= 1;
+	enum Estat
+	{
+		Estat_Success		= 0;	// 成功
+		Estat_NotRechargeId	= 1;	// 没有找到指定充值id
+		Estat_MaxCount		= 2;	// 超过充值最大限制次数
+	}
+	optional Estat m_stat				= 2;
+	optional string m_orderid			= 3;
+};
+
+// 通知客户端充值发货
+message PROBUFF_NET_DELIVER_GOODS_RECHARGE
+{
+	optional int32 m_rechargeid			= 1;
+	optional string m_orderid			= 2;
+	optional int32 m_gold				= 3;
+	map<int32,int32> m_items			= 4;
+};
+
 
 // [请求]错误码
 message PROBUFF_NET_ERROR

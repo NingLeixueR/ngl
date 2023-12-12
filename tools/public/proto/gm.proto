@@ -45,3 +45,20 @@ message PROBUFF_GM_DEL_NOTICE_RESPONSE
 {
 	optional bool m_stat = 3;
 };
+
+// [请求]PHP回调发货
+message PROBUFF_GM_RECHARGE
+{
+	optional int64 m_rechargeid = 1;
+	optional int64 m_roleid = 2;
+	optional string m_orderid = 3;
+};
+
+// [回复]PHP回调发货
+message PROBUFF_GM_RECHARGE_RESPONSE
+{
+	optional bool m_rechargeid = 1;
+	optional int64 m_roleid = 2;
+	optional string m_orderid = 3;
+	optional int32 m_stat = 4;
+};
