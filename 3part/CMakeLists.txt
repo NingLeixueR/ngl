@@ -6,6 +6,10 @@ SET(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} /MT")
 SET(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} /MTd")
 
 SET(BOOST_LIB_SRC ${PROJECT_SOURCE_DIR}/boost/libs)
+
+INCLUDE_DIRECTORIES(3part/boost)
+INCLUDE_DIRECTORIES(3part/boost/boost)
+
 #boost lib
 AUX_SOURCE_DIRECTORY(${BOOST_LIB_SRC}/regex/src boost_regex_lib_src)
 AUX_SOURCE_DIRECTORY(${BOOST_LIB_SRC}/serialization/src boost_serialization_lib_src)
