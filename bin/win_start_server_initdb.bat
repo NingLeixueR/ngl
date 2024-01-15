@@ -1,4 +1,3 @@
-cd ../../bin/Debug/
 set /P rebot_value1=ÇëÊäÈëÇø·ş
 start node_actor actor %rebot_value1% 1
 #start node_login login %rebot_value1% 1

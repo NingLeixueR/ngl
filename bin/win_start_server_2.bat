@@ -1,4 +1,3 @@
-cd ../../bin/Debug/
 #¶þÇø
 start node_actor actor 2 1
 start node_game game 2 1

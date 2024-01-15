@@ -1,6 +1,7 @@
-cd ../../bin/Debug/
-start node_robot robot 2 1 wac 1 1999
-start node_robot robot 2 1 libo 1 1999
+start node_robot robot 2 1 wac 1 1
+start node_robot robot 2 1 libo 1 1
+#start node_robot robot 2 1 wac 1 1999
+#start node_robot robot 2 1 libo 1 1999
 #start node_robot robot 2 1 wac 1 1
 #start node_robot robot 2 1 wac 2 2
 #start node_robot robot 2 1 wac 3 3
