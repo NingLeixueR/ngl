@@ -82,10 +82,11 @@ struct tab_servers
 	bool m_outernet;					// 是否允许外网访问
 
 	int32_t m_db;									// 连接的db进程id
-	vector<int32_t> m_actorserver;					// 连接的actorserver进程id(跨服需要填写多个actorserver)
 	int32_t m_reloadcsv;							// 连接的reloadcsv进程id
 	int32_t m_login;								// 连接的login进程id
 	int16_t m_crossarea;							// 跨服区服
+	vector<int32_t> m_actorserver;					// 连接的actorserver进程id(跨服需要填写多个actorserver)
+	bool m_isopenkcp;								// 是否开启kcp(如果开启与tcp共用同一端口)
 };
 
 struct tab_dbload
