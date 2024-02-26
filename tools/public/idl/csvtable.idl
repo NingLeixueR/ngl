@@ -78,6 +78,7 @@ struct tab_servers
 	string m_ip;						// ip
 	string m_nip;						// 内网ip
 	int16_t m_port;						// 端口
+	int16_t m_uport;					// kcp端口
 	int32_t m_threadnum;				// socket线程数
 	int32_t m_actorthreadnum;			// actor线程池线程数
 	bool m_outernet;					// 是否允许外网访问
@@ -86,7 +87,7 @@ struct tab_servers
 	int32_t m_reloadcsv;							// 连接的reloadcsv进程id
 	int32_t m_login;								// 连接的login进程id
 	int16_t m_crossarea;							// 跨服区服
-	bool m_isopenkcp;								// 是否开启kcp(与tcp共用同一端口m_port)
+	bool m_isopenkcp;								// 是否开启kcp
 	vector<int32_t> m_actorserver;					// 连接的actorserver进程id(跨服需要填写多个actorserver)
 };
 
