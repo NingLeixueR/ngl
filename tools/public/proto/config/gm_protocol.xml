@@ -1,0 +1,19 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<con>
+	<config client = "1" name="class GM::PROBUFF_GM_GET_NOTICE" number="53"/>
+	<config client = "1" name="GM::PROBUFF_GM_GET_NOTICE" number="53"/>
+	<config client = "1" name="class GM::PROBUFF_GM_GET_NOTICE_RESPONSE" number="54"/>
+	<config client = "1" name="GM::PROBUFF_GM_GET_NOTICE_RESPONSE" number="54"/>
+	<config client = "1" name="class GM::PROBUFF_GM_ADD_NOTICE" number="55"/>
+	<config client = "1" name="GM::PROBUFF_GM_ADD_NOTICE" number="55"/>
+	<config client = "1" name="class GM::PROBUFF_GM_ADD_NOTICE_RESPONSE" number="56"/>
+	<config client = "1" name="GM::PROBUFF_GM_ADD_NOTICE_RESPONSE" number="56"/>
+	<config client = "1" name="class GM::PROBUFF_GM_DEL_NOTICE" number="57"/>
+	<config client = "1" name="GM::PROBUFF_GM_DEL_NOTICE" number="57"/>
+	<config client = "1" name="class GM::PROBUFF_GM_DEL_NOTICE_RESPONSE" number="58"/>
+	<config client = "1" name="GM::PROBUFF_GM_DEL_NOTICE_RESPONSE" number="58"/>
+	<config client = "1" name="class GM::PROBUFF_GM_RECHARGE" number="119"/>
+	<config client = "1" name="GM::PROBUFF_GM_RECHARGE" number="119"/>
+	<config client = "1" name="class GM::PROBUFF_GM_RECHARGE_RESPONSE" number="120"/>
+	<config client = "1" name="GM::PROBUFF_GM_RECHARGE_RESPONSE" number="120"/>
+</con>

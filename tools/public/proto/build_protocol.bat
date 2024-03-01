@@ -16,4 +16,10 @@ xcopy /E /I /Y pro\phpcode  ..\..\..\php\
 #xcopy pro\Gm\*.php ..\..\php\phpcode\protobuf\Gm /s/y
 #xcopy pro\GPBMetadata\*.php ..\..\php\phpcode\protobuf\GPBMetadata /s/y
 
+
+xcopy ..\..\..\bin\Debug\makeproto.exe .\ /s/y
+xcopy ..\..\..\bin\Release\makeproto.exe .\ /s/y
+
+makeproto.exe ./
+
 pause
