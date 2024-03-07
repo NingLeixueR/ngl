@@ -1,6 +1,6 @@
 #include "serialize.h"
+#include "ndefine.h"
 #include "csv.h"
-#include "actor_define.h"
 
 enum ENET_CONFIG
 {
