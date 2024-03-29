@@ -59,10 +59,19 @@ enum NODE_TYPE
 
 enum ENET_PROTOCOL
 {
-	ENET_TCP = 1,
-	ENET_UDP = 2,
-	ENET_WS = 3,
-	ENET_KCP = 4,
+	ENET_NULL = -1,
+	ENET_TCP = 0,
+	ENET_WS = 1,
+	ENET_KCP = 2,
+	ENET_COUNT = 3,
+};
+
+struct net_works
+{
+	ENET_PROTOCOL m_type;
+	string m_ip;
+	string m_nip;
+	uint16_t m_port;
 };
 
 struct tab_servers
@@ -74,21 +83,15 @@ struct tab_servers
 	int16_t m_area;						// 区服
 	NODE_TYPE m_type;					// 服务器类型(1db2actorserver3game4gateway5login6robot7world8log9reloadcsv10reloadcsv_tools)
 	int32_t m_tcount;					// 同类型服务器的序号
-	ENET_PROTOCOL m_net;				// 服务器协议(1tcp2udp3ws)
-	string m_ip;						// ip
-	string m_nip;						// 内网ip
-	int16_t m_port;						// 端口
-	int16_t m_uport;					// kcp端口
 	int32_t m_threadnum;				// socket线程数
 	int32_t m_actorthreadnum;			// actor线程池线程数
 	bool m_outernet;					// 是否允许外网访问
-
-	int32_t m_db;									// 连接的db进程id
-	int32_t m_reloadcsv;							// 连接的reloadcsv进程id
-	int32_t m_login;								// 连接的login进程id
-	int16_t m_crossarea;							// 跨服区服
-	bool m_isopenkcp;								// 是否开启kcp
-	vector<int32_t> m_actorserver;					// 连接的actorserver进程id(跨服需要填写多个actorserver)
+	int32_t m_db;						// 连接的db进程id
+	int32_t m_reloadcsv;				// 连接的reloadcsv进程id
+	int32_t m_login;					// 连接的login进程id
+	int16_t m_crossarea;				// 跨服区服
+	vector<int32_t> m_actorserver;		// 连接的actorserver进程id(跨服需要填写多个actorserver)
+	vector<net_works> m_net;			// 服务器网络相关(net_works:m_type(1tcp2ws),m_ip,m_nip,m_port)
 };
 
 struct tab_dbload
