@@ -168,9 +168,9 @@ message db_task
 	optional int64 m_id				= 1; // roleid
 	message data_schedule
 	{
-		optional int32 m_type			= 1;	//EFinshTask
-		repeated int32 m_parmint		= 2; 
-		repeated int32 m_sumint			= 3; 
+		optional int32 m_type			= 1;	// csvtable.ETask
+		optional int32 m_value			= 2;	// 当前值 
+		optional int32 m_sumint			= 3;	// 总值
 	}
 	message data
 	{

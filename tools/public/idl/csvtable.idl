@@ -382,21 +382,26 @@ struct tab_activity_drawcompliance
 
 enum ETask
 {
-	ETaskRoleLv  = 1,		// 玩家等级
-	ETaskRoleVip = 2,		// 玩家vip等级
-	ETaskTaskId  = 3,		// 完成某ID任务
+	ETaskRoleLv  = 0,		// 玩家等级
+	ETaskRoleVip = 1,		// 玩家vip等级
+	ETaskTaskId  = 2,		// 完成某ID任务
+	ETaskCount,
 };
 
-struct task_receive
+enum ETaskCondition
 {
-	ETask m_receivetype;			// ETask(1.玩家等级达到X 2.主公vip等级达到x 3.完成某ID任务)
-	vector<int32_t> m_parmint;
+	ETaskConditionMore = 0,		// 大于等于
+	ETaskConditionLess = 1,		// 小于等于
+	ETaskConditionEqual = 2,		// 等于
+	ETaskConditionCount,
 };
 
-struct task_complete
+// 任务条件(接收条件，完成条件)
+struct task_condition
 {
-	ETask m_completetype;		// ETask(1.玩家等级达到X 2.主公vip等级达到x 3.完成某ID任务)
-	vector<int32_t> m_parmint;
+	ETask m_type;					// ETask(1.玩家等级达到X 2.主公vip等级达到x 3.完成某ID任务)
+	ETaskCondition m_condition;	
+	int32_t m_parmint;
 };
 
 enum ETaskType
@@ -413,9 +418,9 @@ struct tab_task
 	string m_remarks;
 
 	ETaskType m_type;
-	vector<task_receive> m_taskreceive;		// 接收此任务的前提
-	vector<task_complete> m_taskcomplete;	// 完成此任务的条件
-	int32_t m_dropid;						// 任务奖励
+	vector<task_condition> m_taskreceive;		// 接收此任务的前提
+	vector<task_condition> m_taskcomplete;		// 完成此任务的条件
+	int32_t m_dropid;							// 任务奖励
 };
 
 enum eobstacles
