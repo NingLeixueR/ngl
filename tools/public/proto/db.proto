@@ -178,6 +178,7 @@ message db_task
 		optional int32 m_receiveutc			= 2; // 接收任务时间
 		optional int32 m_finshutc			= 3; // 完成任务时间
 		repeated data_schedule m_schedules  = 4; // 任务进度
+		optional bool m_receive				= 5; // 任务奖励是否已领取
 	}
 	map<int32,data> m_rundatas			= 2; // 正在进行的任务数据
 	map<int32,data> m_completeddatas	= 3; // 已完成的任务数据

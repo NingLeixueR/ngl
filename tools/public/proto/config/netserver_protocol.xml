@@ -520,4 +520,24 @@
 	<config client = "0" name="ngl::np_actor_forward<pbnet::PROBUFF_NET_KCPSESSION_RESPONSE, (EPROTOCOL_TYPE)1, false, pbnet::PROBUFF_NET_KCPSESSION_RESPONSE>" number="52"/>
 	<config client = "0" name="struct ngl::np_actormodule_forward<class pbnet::PROBUFF_NET_KCPSESSION_RESPONSE>" number="52"/>
 	<config client = "0" name="ngl::np_actormodule_forward<pbnet::PROBUFF_NET_KCPSESSION_RESPONSE>" number="52"/>
+	<config client = "0" name="struct ngl::np_actor_forward<class pbnet::PROBUFF_NET_TASK_RECEIVE_AWARD,1,1,struct ngl::forward>" number="105"/>
+	<config client = "0" name="ngl::np_actor_forward<pbnet::PROBUFF_NET_TASK_RECEIVE_AWARD, (EPROTOCOL_TYPE)1, true, ngl::forward>" number="105"/>
+	<config client = "0" name="struct ngl::np_actor_forward<class pbnet::PROBUFF_NET_TASK_RECEIVE_AWARD,1,0,struct ngl::forward>" number="105"/>
+	<config client = "0" name="ngl::np_actor_forward<pbnet::PROBUFF_NET_TASK_RECEIVE_AWARD, (EPROTOCOL_TYPE)1, false, ngl::forward>" number="105"/>
+	<config client = "0" name="struct ngl::np_actor_forward<class pbnet::PROBUFF_NET_TASK_RECEIVE_AWARD,1,1,class pbnet::PROBUFF_NET_TASK_RECEIVE_AWARD>" number="105"/>
+	<config client = "0" name="ngl::np_actor_forward<pbnet::PROBUFF_NET_TASK_RECEIVE_AWARD, (EPROTOCOL_TYPE)1, true, pbnet::PROBUFF_NET_TASK_RECEIVE_AWARD>" number="105"/>
+	<config client = "0" name="struct ngl::np_actor_forward<class pbnet::PROBUFF_NET_TASK_RECEIVE_AWARD,1,0,class pbnet::PROBUFF_NET_TASK_RECEIVE_AWARD>" number="105"/>
+	<config client = "0" name="ngl::np_actor_forward<pbnet::PROBUFF_NET_TASK_RECEIVE_AWARD, (EPROTOCOL_TYPE)1, false, pbnet::PROBUFF_NET_TASK_RECEIVE_AWARD>" number="105"/>
+	<config client = "0" name="struct ngl::np_actormodule_forward<class pbnet::PROBUFF_NET_TASK_RECEIVE_AWARD>" number="105"/>
+	<config client = "0" name="ngl::np_actormodule_forward<pbnet::PROBUFF_NET_TASK_RECEIVE_AWARD>" number="105"/>
+	<config client = "0" name="struct ngl::np_actor_forward<class pbnet::PROBUFF_NET_TASK_RECEIVE_AWARD_RESPONSE,1,1,struct ngl::forward>" number="106"/>
+	<config client = "0" name="ngl::np_actor_forward<pbnet::PROBUFF_NET_TASK_RECEIVE_AWARD_RESPONSE, (EPROTOCOL_TYPE)1, true, ngl::forward>" number="106"/>
+	<config client = "0" name="struct ngl::np_actor_forward<class pbnet::PROBUFF_NET_TASK_RECEIVE_AWARD_RESPONSE,1,0,struct ngl::forward>" number="106"/>
+	<config client = "0" name="ngl::np_actor_forward<pbnet::PROBUFF_NET_TASK_RECEIVE_AWARD_RESPONSE, (EPROTOCOL_TYPE)1, false, ngl::forward>" number="106"/>
+	<config client = "0" name="struct ngl::np_actor_forward<class pbnet::PROBUFF_NET_TASK_RECEIVE_AWARD_RESPONSE,1,1,class pbnet::PROBUFF_NET_TASK_RECEIVE_AWARD_RESPONSE>" number="106"/>
+	<config client = "0" name="ngl::np_actor_forward<pbnet::PROBUFF_NET_TASK_RECEIVE_AWARD_RESPONSE, (EPROTOCOL_TYPE)1, true, pbnet::PROBUFF_NET_TASK_RECEIVE_AWARD_RESPONSE>" number="106"/>
+	<config client = "0" name="struct ngl::np_actor_forward<class pbnet::PROBUFF_NET_TASK_RECEIVE_AWARD_RESPONSE,1,0,class pbnet::PROBUFF_NET_TASK_RECEIVE_AWARD_RESPONSE>" number="106"/>
+	<config client = "0" name="ngl::np_actor_forward<pbnet::PROBUFF_NET_TASK_RECEIVE_AWARD_RESPONSE, (EPROTOCOL_TYPE)1, false, pbnet::PROBUFF_NET_TASK_RECEIVE_AWARD_RESPONSE>" number="106"/>
+	<config client = "0" name="struct ngl::np_actormodule_forward<class pbnet::PROBUFF_NET_TASK_RECEIVE_AWARD_RESPONSE>" number="106"/>
+	<config client = "0" name="ngl::np_actormodule_forward<pbnet::PROBUFF_NET_TASK_RECEIVE_AWARD_RESPONSE>" number="106"/>
 </con>

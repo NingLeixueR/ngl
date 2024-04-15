@@ -520,3 +520,22 @@ message PROBUFF_NET_KCPSESSION_RESPONSE
 };
 
 
+// 领取任务奖励
+message PROBUFF_NET_TASK_RECEIVE_AWARD
+{
+	optional int32	m_taskid	= 1;		// 任务id
+};
+
+message drop_item
+{
+	optional int32	m_item	= 1;
+	optional int32	m_count	= 2;
+};
+
+message PROBUFF_NET_TASK_RECEIVE_AWARD_RESPONSE
+{
+	optional int32	m_taskid			= 1;		// 任务id
+	optional bool   m_stat				= 2;		// 是否领取成功
+	map<int32,int32> m_drop				= 3;		// 奖励 key:itemid value:itemcount
+};
+
