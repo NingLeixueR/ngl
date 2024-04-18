@@ -308,9 +308,10 @@ enum ECalendar
 
 struct tweek
 {
-	int32_t m_week;			// 周几
-	string m_opentime;		//  开启时间 HH:mm:ss
-	string m_closetime;		//  结束时间 HH:mm:ss
+	int32_t m_weekstart;			// 周几开始
+	string m_opentime;				// 开启时间 HH:mm:ss
+	int32_t m_weekfinish;			// 周几结束
+	string m_closetime;				// 结束时间 HH:mm:ss
 };
 
 struct tserveropen
@@ -327,6 +328,12 @@ struct tregularslot
 	string m_closetime;		// 结束时间 YYYY-MM-DD HH:mm:ss
 };
 
+enum ECalendarType
+{
+	ECalendarTypeEveryDay,		// 每日定时刷新
+	ECalendarTypeActivity,		// 活动开启与关闭
+};
+
 // 日历
 struct tab_calendar
 {
@@ -335,9 +342,12 @@ struct tab_calendar
 	string m_remarks;							// [index:2] 备注
 
 	ECalendar m_type;							// [index:3] ECalendar(0:周几,1:以开服时间以来的天数,2:固定时间段)
-	vector<tweek> m_week;						// [index:4] m_type=0,tweek(周几(1-7)*开启时间HH:mm:ss*结束时间HH:mm:ss)
+	vector<tweek> m_week;						// [index:4] m_type=0,tweek(周几开始(1-7)*开启时间HH:mm:ss*周几结束(1-7)*结束时间HH:mm:ss)
 	vector<tserveropen> m_serveropen;			// [index:5] m_type=1,tserveropen(开服后多少天开启*开启时间HH:mm:ss*开服后多少天结束*结束时间HH:mm:ss)
 	vector<tregularslot> m_tregularslot;		// [index:6] m_type=2,tregularslot(开启时间YYYY/MM/DD HH:mm:ss*结束时间YYYY/MM/DD HH:mm:ss)
+
+	ECalendarType m_carendar;					// [index:7] (0.每日定时刷新1.活动开启与关闭)
+	vector<int32_t> m_carendarparm;				// [index:8] (m_carendar == ECalendarTypeActivity:活动id)
 };
 
 struct tab_mail
@@ -373,7 +383,6 @@ struct tab_activity
 	string m_remarks;							// [index:2] 备注
 
 	EActivity m_type;							// [index:3] 活动类型(1类似咸鱼之王的<<招募达标>>)
-	int32_t m_calendarid;						// [index:4] 关联的脚本日历
 };
 
 struct tab_activity_drawcompliance

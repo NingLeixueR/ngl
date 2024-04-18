@@ -18,7 +18,8 @@ enum ENUM_DB
 	ENUM_DB_RANKLIST = 8;		// 排行数据
 	ENUM_DB_ACTIVITY = 9;		// 活动数据
 	ENUM_DB_TASK = 10;			// 任务数据
-	ENUM_DB_COUNT = 11;
+	ENUM_DB_CALENDAR = 11;		// 脚本日历数据
+	ENUM_DB_COUNT = 12;
 };
 
 // ENUM_DB_ACCOUNT,				// 账号数据
@@ -144,22 +145,19 @@ message db_ranklist
 message db_activity
 {
 	optional int64 m_id			= 1; // tab_actiivity 表id
-	message data
-	{
-		optional int32 m_beg		= 2; // 活动开启时间
-		optional int32 m_end		= 3; // 活动结束时间
-		optional bool m_start		= 4; // 是否开启
-		optional bool m_finish		= 5; // 是否关闭
+	optional int32 m_beg		= 2; // 活动开启时间
+	optional int32 m_end		= 3; // 活动结束时间
+	optional bool m_start		= 4; // 是否开启
+	optional bool m_finish		= 5; // 是否关闭
+	optional int32 m_calendarid = 6; // >0:脚本日历控制 <0:activity自行控制开关
 
-		// tab_activity.m_type == EActivityDrawCompliance
-		message drawcompliance
-		{
-			optional int32 m_count		= 1; // 累计次数
-			repeated int32 m_reward		= 2; // 累计领取哪些奖励
-		}
-		map<int64,drawcompliance> m_drawcompliance	= 6;
+	// tab_activity.m_type == EActivityDrawCompliance
+	message drawcompliance
+	{
+		optional int32 m_count		= 1; // 累计次数
+		map<int32,bool> m_reward	= 2; // 累计领取哪些奖励
 	}
-	repeated data m_datas = 2; // 活动数据
+	map<int64,drawcompliance> m_drawcompliance	= 7;
 }
 
 
@@ -184,6 +182,14 @@ message db_task
 	map<int32,data> m_completeddatas	= 3; // 已完成的任务数据
 }
 
+
+message db_calendar
+{
+	optional int64 m_id				= 1; // 脚本日历id
+	optional int64 m_time			= 2; // 32bit 开始时间 32 结束时间
+	optional bool m_start			= 3; // 是否开启
+	optional bool m_finish			= 4; // 是否结束
+}
 
 
 
