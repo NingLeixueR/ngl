@@ -141,7 +141,6 @@ message db_ranklist
 	map<int64,rankitem> m_item	= 2;
 }
 
-
 message db_activity
 {
 	optional int64 m_id			= 1; // tab_actiivity 表id
@@ -159,7 +158,6 @@ message db_activity
 	}
 	map<int64,drawcompliance> m_drawcompliance	= 7;
 }
-
 
 message db_task
 {
@@ -181,7 +179,6 @@ message db_task
 	map<int32,data> m_rundatas			= 2; // 正在进行的任务数据
 	map<int32,data> m_completeddatas	= 3; // 已完成的任务数据
 }
-
 
 message db_calendar
 {
