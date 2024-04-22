@@ -69,12 +69,12 @@ message PROBUFF_NET_GET_TIME_RESPONSE
 };
 
 // [请求]获取公告列表
-message PROBUFF_NET_GET_NOTICE
+message PROBUFF_NET_NOTICE
 {
 };
 
 // [回复]获取公告列表
-message PROBUFF_NET_GET_NOTICE_RESPONSE
+message PROBUFF_NET_NOTICE_RESPONSE
 {
 	repeated pbdb.db_notice m_notices		= 1;
 };
@@ -538,4 +538,5 @@ message PROBUFF_NET_TASK_RECEIVE_AWARD_RESPONSE
 	optional bool   m_stat				= 2;		// 是否领取成功
 	map<int32,int32> m_drop				= 3;		// 奖励 key:itemid value:itemcount
 };
+
 
