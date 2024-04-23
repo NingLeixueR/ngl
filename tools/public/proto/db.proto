@@ -94,11 +94,14 @@ message mail
 {
 	optional int32 m_id				= 1;
 	optional int32 m_createutc		= 2;	// 创建时间
+	//// [邮件内容] 1.邮件表id关联参数
 	optional int32 m_tid			= 3;	// 邮件表id
 	optional string m_prams			= 4;	// 参数以#号分割pram1#pram2..
-	repeated mailitem  m_items		= 5;	// 邮件附件
-	optional bool m_read			= 6;	// 是否已读
-	optional bool m_draw			= 7;	// 是否领取附件	
+	//// [邮件内容] 2.字符串
+	optional string m_content		= 5;	// 邮件内容
+	repeated mailitem  m_items		= 6;	// 邮件附件
+	optional bool m_read			= 7;	// 是否已读
+	optional bool m_draw			= 8;	// 是否领取附件	
 }
 
 message db_mail
