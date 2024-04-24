@@ -300,7 +300,7 @@ message UNIT_POSITION
 message UnitAttribute
 {
 	 optional int32 m_type				= 1;	// EnumAttribute
-	 optional int32 m_value				= 2;	// 属性值
+	 optional int64 m_value				= 2;	// 属性值
 };
 
 enum eunitstat
