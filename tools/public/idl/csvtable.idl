@@ -44,7 +44,7 @@ enum EPH
 };
 
 enum NODE_TYPE
-{
+{			
 	DB = 1,					// 数据库服务器
 	ACTORSERVER = 2,		// actor 服务器
 	GAME = 3,				// 逻辑服务器
