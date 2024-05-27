@@ -142,13 +142,12 @@ enum EnumModule
 
 enum EnumAttribute
 {
-	E_Null = 0,
-	E_Attack = 1,	// [攻击]
-	E_Defense = 2,	// [防御]
-	E_Hp = 3,		// [血量]
-	E_Anger = 4,	// [怒气]
-	E_Speed = 5,	// [速度]
-	E_Count = 6,
+	E_Attack,	// [攻击]
+	E_Defense,	// [防御]
+	E_Hp,		// [血量]
+	E_Anger,	// [怒气]
+	E_Speed,	// [速度]
+	E_Count,
 };
 
 struct tab_attribute
