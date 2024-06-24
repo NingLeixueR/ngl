@@ -80,9 +80,13 @@ message db_bag
 //ENUM_DB_KEYVALUE,		// 公共key/value数据
 message db_keyvalue
 {
-	optional int64 m_id					= 1;
-	optional string m_key				= 2;				// key
-	optional string m_value				= 3;				// value
+	enum ekv
+	{
+		ekv_none			= 0;
+		ekv_serveropentime	= 1; // 服务器开服时间
+	}
+	optional int64 m_id					= 1;				// ekeyvalue
+	optional string m_value				= 2;				// value
 }
 
 //ENUM_DB_ROLEKEYVALUE,		// 玩家个人key/value数据
