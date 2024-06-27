@@ -4,7 +4,6 @@
 
 
 // ### 注释中 [index:%] 指定在csv中的列位置,序号从0开始
-
 enum ENET_CONFIG
 {
 	net_config_send_buff_maxbyte = 8129,	

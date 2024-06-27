@@ -83,7 +83,6 @@ message db_keyvalue
 	enum ekv
 	{
 		none			= 0;
-		serveropentime	= 1; // 服务器开服时间
 	}
 	optional int64 m_id					= 1;				// ekeyvalue
 	optional string m_value				= 2;				// value
