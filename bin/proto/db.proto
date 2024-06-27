@@ -93,7 +93,7 @@ message db_keyvalue
 message db_rolekeyvalue
 {
 	optional int64 m_id					= 1;
-	map<string,string> m_data	= 2;				// key/val
+	map<string,string> m_data			= 2;				// key/val
 }
 
 //ENUM_DB_MAIL,			// 邮件数据
