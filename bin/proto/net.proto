@@ -580,3 +580,14 @@ message PROBUFF_NET_FAMIL_LIST_RESPONSE
 	optional int64 m_familid			= 1;	
 	repeated pbdb.db_family  m_family	= 2;
 }
+
+message PROBUFF_NET_CHANGE_FAMILNAME
+{
+	optional int64 m_familid = 1;	
+	optional string m_name = 2;	// 修改军团名称
+}
+
+message PROBUFF_NET_CHANGE_FAMILNAME_RESPONSE
+{
+	optional int32  m_stat				= 1;		// 状态
+}
