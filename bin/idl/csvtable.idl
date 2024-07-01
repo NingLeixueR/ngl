@@ -519,3 +519,14 @@ struct tab_recharge
 	int32_t m_count;							// [index:9][load:y] 是否限制充值次数
 	vector<int32_t> m_activityid;				// [index:10][load:y] 必须指定活动开启时才能充值这一档
 };
+
+// 军团等级表
+struct tab_familylv
+{
+	int32_t m_id;								// [index:0][load:y] 军团等级 
+	string m_name;								// [index:1][load:y] 名字 
+	string m_remarks;							// [index:2][load:n] 备注
+
+	int32_t m_exp;  							// [index:3][load:y] 升级需要的经验
+	int32_t m_maxmembers; 						// [index:4][load:y] 最多军团人数
+};
