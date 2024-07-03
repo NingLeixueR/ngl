@@ -140,20 +140,23 @@ message db_notice
 	optional int32 m_finishtime	= 4;				// 结束时间
 };
 
+enum eranklist
+{
+	lv = 0;		// 等级排行
+	count = 1;
+}
+
 message rankitem
 {
-	optional int64 m_roleid = 1;
-	optional string m_name = 2;
-
-	optional int32 m_lv = 3;		// 玩家等级
-	optional int32 m_lvtime = 4;	// 玩家等级更新时间
+	optional int64 m_value	= 1;
+	optional int32 m_time	= 2;
 }
 
 //ENUM_DB_RANKLIST,		// 排行数据
 message db_ranklist
 {
-	optional int64 m_id			= 1;				// 排行id
-	map<int64,rankitem> m_item	= 2;
+	optional int64 m_id			= 1;				// roleid
+	map<int32,rankitem> m_items	= 2;				// key:排行榜类型eranklist
 }
 
 message db_activity

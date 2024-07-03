@@ -539,55 +539,77 @@ message PROBUFF_NET_TASK_RECEIVE_AWARD_RESPONSE
 	map<int32,int32> m_drop				= 3;		// 奖励 key:itemid value:itemcount
 };
 
+// [请求]创建军团
 message PROBUFF_NET_CREATE_FAMIL
 {
 	optional string m_name = 1;	// 创建军团的名称
 }
 
+// [回复]创建军团
 message PROBUFF_NET_CREATE_FAMIL_RESPONSE
 {
 	optional int32  m_stat				= 1;		// 状态
 }
 
+// [请求]加入军团
 message PROBUFF_NET_JOIN_FAMIL
 {
 	optional int64 m_familid = 1;	
 }
 
+// [回复]加入军团
 message PROBUFF_NET_JOIN_FAMIL_RESPONSE
 {
 	optional int32  m_stat				= 1;		// 状态
 }
 
+// [请求]离开军团
 message PROBUFF_NET_LEAVE_FAMIL
 {
 	optional int64 m_familid = 1;	
 }
 
+// [回复]离开军团
 message PROBUFF_NET_LEAVE_FAMIL_RESPONSE
 {
 	optional int32  m_stat				= 1;		// 状态
 }
 
-// 获取军团列表
+// [请求]获取军团列表
 message PROBUFF_NET_FAMIL_LIST
 {	
 	optional int64 m_familid = 1;	
 }
 
+// [回复]获取军团列表
 message PROBUFF_NET_FAMIL_LIST_RESPONSE
 {
 	optional int64 m_familid			= 1;	
 	repeated pbdb.db_family  m_family	= 2;
 }
 
+// [请求]修改军团名称
 message PROBUFF_NET_CHANGE_FAMILNAME
 {
 	optional int64 m_familid = 1;	
 	optional string m_name = 2;	// 修改军团名称
 }
 
+// [回复]修改军团名称
 message PROBUFF_NET_CHANGE_FAMILNAME_RESPONSE
 {
 	optional int32  m_stat				= 1;		// 状态
 }
+
+// [请求]获取排行榜
+message PROBUFF_NET_RANKLIST
+{
+	optional pbdb.eranklist m_type				= 1;
+};
+
+// [回复]获取排行榜
+message PROBUFF_NET_RANKLIST_RESPONSE
+{
+	optional pbdb.eranklist m_type				= 1;
+	repeated pbdb.db_brief m_items			= 2;
+};
