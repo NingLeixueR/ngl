@@ -43,6 +43,7 @@ message db_brief
 	optional int32 m_moneygold		= 4;				// 金币
 	optional int32 m_moneysilver	= 5;				// 银币
 	optional int32 m_vip			= 6;				// vip等级
+	optional int32 m_notalkutc		= 7;				// 被禁言的期限
 }
 
 // ENUM_DB_ROLE,			// 玩家数据
@@ -53,7 +54,7 @@ message db_role
 	// 充值信息
 	message recharge
 	{
-		optional int32 m_rechargeid	= 1;	// 充值id
+		optional int32 m_rechargeid		= 1;	// 充值id
 		optional int32 m_utc			= 2;	// 充值时间
 	}
 	repeated recharge m_recharge		= 3;
