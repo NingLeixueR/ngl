@@ -85,6 +85,7 @@ message db_keyvalue
 	enum ekv
 	{
 		none			= 0;
+		account_ban		= 1;	// 封号列表
 	}
 	optional int64 m_id					= 1;				// ekeyvalue
 	optional string m_value				= 2;				// value
