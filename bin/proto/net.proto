@@ -595,6 +595,24 @@ message PROBUFF_NET_CHANGE_FAMILNAME_RESPONSE
 	optional int32  m_stat				= 1;		// 状态
 }
 
+// [请求]军团签到
+message PROBUFF_NET_FAMILSIGN
+{
+	optional int64 m_familid = 1;
+}
+
+// [回复]军团签到
+message PROBUFF_NET_FAMILSIGN_RESPONSE
+{
+	optional int32  m_stat				= 1;		// 状态
+}
+
+// [回复]恭喜获得x物品
+message PROBUFF_NET_REWARD_ITEM_RESPONSE
+{
+	map<int32,int32>	m_items	= 1;		// 获取的物品 key:物品tid value:物品数量
+}
+
 // [请求]获取排行榜
 message PROBUFF_NET_RANKLIST
 {
