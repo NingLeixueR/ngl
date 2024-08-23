@@ -21,7 +21,8 @@ enum ENUM_DB
 	ENUM_DB_CALENDAR		= 11;		// 脚本日历数据
 	ENUM_DB_ROLEKEYVALUE	= 12;		// 玩家个人key/value数据
 	ENUM_DB_FAMILY			= 13;		// 军团
-	ENUM_DB_COUNT			= 14;
+	ENUM_DB_FAMILYER		= 14;		// 军团成员
+	ENUM_DB_COUNT			= 15;
 };
 
 // ENUM_DB_ACCOUNT,				// 账号数据
@@ -208,32 +209,31 @@ message db_calendar
 	optional bool m_finish			= 4; // 是否结束
 }
 
-message familyer
+message db_familyer
 {
-	optional int64 m_roleid				= 1; // 军团成员id
-	optional int32 m_joinutc			= 2; // 加入军团的时间
-	optional int32 m_lastsignutc		= 3; // 上次签到时间
+	optional int64 m_id					= 1;	// 军团成员id
+	optional int32 m_joinutc			= 2;	// 加入军团的时间
+	optional int32 m_lastsignutc		= 3;	// 上次签到时间
+	optional int32 m_lastleaveutc		= 4;	// 上次离开军团时间
 	// 职位
 	enum eposition
 	{
-		leader		= 0;		// 军团长
-		counsellor	= 1;		// 军师
-		ordinary	= 2;		// 普通成员
+		none		= 0;		// 未加入军团
+		leader		= 1;		// 军团长
+		counsellor	= 2;		// 军师
+		ordinary	= 3;		// 普通成员
 	}
-	optional eposition m_position		= 4; // 职位
+	optional eposition m_position		= 5; // 职位
 }
 
 message db_family
 {
-	optional int64 m_id				= 1; // 军团id
-	optional int32 m_createutc		= 2; // 军团创建时间
-	optional string m_name			= 3; // 军团名称
-	optional int64 m_leader			= 4; // 军团长
-	optional int32 m_lv				= 5; // 军团等级
-	optional int32 m_exp			= 6; // 军团经验
-	map<int64,familyer>	m_member	= 7; // 成员
+	optional int64		m_id			= 1; // 军团id
+	optional int32		m_createutc		= 2; // 军团创建时间
+	optional string		m_name			= 3; // 军团名称
+	optional int64		m_leader		= 4; // 军团长
+	optional int32		m_lv			= 5; // 军团等级
+	optional int32		m_exp			= 6; // 军团经验
+	repeated int64		m_member		= 7; // 成员
+	repeated int64		m_applylist		= 8; // 申请列表
 }
-
-
-
-
