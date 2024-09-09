@@ -22,7 +22,8 @@ enum ENUM_DB
 	ENUM_DB_ROLEKEYVALUE	= 12;		// 玩家个人key/value数据
 	ENUM_DB_FAMILY			= 13;		// 军团
 	ENUM_DB_FAMILYER		= 14;		// 军团成员
-	ENUM_DB_COUNT			= 15;
+	ENUM_DB_FRIENDS			= 15;		// 好友
+	ENUM_DB_COUNT			= 16;
 };
 
 // ENUM_DB_ACCOUNT,				// 账号数据
@@ -237,4 +238,11 @@ message db_family
 	optional int32		m_exp			= 6; // 军团经验
 	repeated int64		m_member		= 7; // 成员
 	repeated int64		m_applylist		= 8; // 申请列表
+}
+
+message db_friends
+{
+	optional int64		m_id			= 1;	// 玩家roleid
+	repeated int64		m_friends		= 2;	// 好友列表
+	repeated int64		m_applyfriends	= 3;	// 好友请求列表
 }
